@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React,{useState} from 'react';
 
-const RegistrationForm = () => {
-  const [formData, setFormData] = useState({
+const RegistrationForm=()=>{
+  const [formData, setFormData]=useState({
     firstName: '',
     lastName: '',
     mobileNumber: '',
@@ -9,27 +9,27 @@ const RegistrationForm = () => {
     profilePicture: null,
   });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
+  const handleChange=(e)=>{
+    const {name,value}=e.target;
     setFormData({
       ...formData,
       [name]: value,
     });
   };
 
-  const handleFileChange = (e) => {
+  const handleFileChange=(e)=>{
     setFormData({
       ...formData,
       profilePicture: e.target.files[0],
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit=(e)=>{
     e.preventDefault();
     console.log(formData);
   };
 
-  return (
+  return(
     <form onSubmit={handleSubmit} style={styles.form}>
       <label style={styles.label}>First Name</label>
       <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} style={styles.input} required />
@@ -51,21 +51,21 @@ const RegistrationForm = () => {
   );
 };
 
-const styles = {
-  form: {
+const styles={
+  form:{
     display: 'flex',
     flexDirection: 'column',
     maxWidth: '400px',
     margin: 'auto',
   },
-  label: {
+  label:{
     margin: '10px 0 5px',
   },
-  input: {
+  input:{
     padding: '10px',
     fontSize: '16px',
   },
-  button: {
+  button:{
     marginTop: '20px',
     padding: '10px',
     backgroundColor: '#4CAF50',
